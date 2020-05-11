@@ -1,0 +1,29 @@
+# This is a basic workflow to help you get started with Actions
+
+name: edit-readme
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    if: "!contains(github.event.head_commit.message, 'SKIP CI')"
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Build README
+      run: node ./.github/write-readme.js
+    - name: Commit README
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add README.md
+        git commit -m '[SKIP CI] Build README.md'
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.ACTION_GITHUB_TOKEN }}
+        branch: master
