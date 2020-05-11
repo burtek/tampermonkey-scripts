@@ -5,13 +5,15 @@ const { resolve } = require('path');
 
 const NAME_REGEXP = /^\/\/ @name +([^ ].+)$/m;
 const DESC_REGEXP = /^\/\/ @description +([^ ].+)$/m;
+const VERSION_REGEXP = /^\/\/ @version +([^ ].+)$/m;
+
 const USERSCRIPT_REGEXP = /\.user\.js$/;
 
 const README_TPL = `# tampermonkey-scripts
 My TamperMonkey Scripts
 
- **Name**<br />Description<br /> | source & install
- :------------------------------ | :--------------:`;
+ **Name**<br />Description<br /> | source & install | ver. 
+ :------------------------------ | :--------------: | :-----: `;
 
 run();
 
@@ -47,8 +49,9 @@ async function createJob(fileDirEnt) {
     
     const name = content.match(NAME_REGEXP)[1];
     const description = content.match(DESC_REGEXP)[1].split('.')[0];
+    const version = content.match(VERSION_REGEXP)[1];
 
-    return createEntry(name, description, fileDirEnt.name);
+    return createEntry(name, description, fileDirEnt.name, version);
 }
 
 /**
@@ -56,8 +59,8 @@ async function createJob(fileDirEnt) {
  * @param {string} [description = '']
  * @param {string} filename
  */
-function createEntry(name, description = '', filename) {
-    return `**${name}**<br />${description} | [_${filename}_](./${filename})<br />[[install](https://github.com/burtek/tampermonkey-scripts/raw/master/${filename})]`
+function createEntry(name, description = '', filename, version) {
+    return `**${name}**<br />${description} | [_${filename}_](./${filename})<br />[[install](https://github.com/burtek/tampermonkey-scripts/raw/master/${filename})] | ${version}`
 }
 
 /**
