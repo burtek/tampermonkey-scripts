@@ -18,10 +18,12 @@ jobs:
       run: node ./.github/write-readme.js
     - name: Commit README
       run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-        git add README.md
-        git commit -m '[SKIP CI] Build README.md'
+        if ! git diff --no-ext-diff --quiet --exit-code; then
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add README.md
+          git commit -m '[SKIP CI] Build README.md'
+        fi;
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
