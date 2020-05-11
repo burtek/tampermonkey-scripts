@@ -4,10 +4,12 @@ name: edit-readme
 
 on:
   push:
-    branches: [ build ]
+    branches:
+      - build
 
 jobs:
-  rewrite:
+  build:
+    if: "!contains(github.event.head_commit.message, 'SKIP CI')"
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
