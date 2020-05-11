@@ -10,7 +10,7 @@ const VERSION_REGEXP = /^\/\/ @version +([^ ].+)$/m;
 const USERSCRIPT_REGEXP = /\.user\.js$/;
 
 const README_TPL = `# tampermonkey-scripts
-My TamperMonkey Scripts
+My TamperMonkey Scripts ![](https://github.com/burtek/tampermonkey-scripts/workflows/edit-readme/badge.svg)
 
  **Name**<br />Description<br /> | source & install | ver. 
  :------------------------------ | :--------------: | :-----: `;
