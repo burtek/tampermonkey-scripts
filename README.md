@@ -1,5 +1,8 @@
+<!-- File auto-generated, do not edit manually! -->
 # tampermonkey-scripts
-My TamperMonkey Scripts ![](https://github.com/burtek/tampermonkey-scripts/workflows/edit-readme/badge.svg)
+![](https://github.com/burtek/tampermonkey-scripts/workflows/edit-readme/badge.svg)
+
+My TamperMonkey Scripts:
 
  **Name**<br />Description<br /> | source & install | ver. 
  :------------------------------ | :--------------: | :-----: 
