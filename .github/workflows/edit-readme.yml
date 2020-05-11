@@ -5,7 +5,7 @@ name: edit-readme
 on:
   push:
     branches:
-      - build
+      - master
 
 jobs:
   build:
@@ -26,4 +26,4 @@ jobs:
       uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.ACTION_GITHUB_TOKEN }}
-        branch: build
+        branch: master
