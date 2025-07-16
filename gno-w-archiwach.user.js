@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         G..noWArchiwach
 // @namespace    https://github.com/burtek/tampermonkey-scripts
-// @version      0.1.1
+// @version      0.1.2
 // @description  try to take over the world!
 // @author       burtek <burtekdotryw@gmail.com>
 // @match        https://www.genealogiawarchiwach.pl/*
@@ -11,6 +11,8 @@
 // @grant        GM.getValue
 // @grant        GM_setClipboard
 // @run-at       document-end
+// @downloadURL  https://github.com/burtek/tampermonkey-scripts/raw/refs/heads/master/gno-w-archiwach.user.js
+// @updateURL    https://github.com/burtek/tampermonkey-scripts/raw/refs/heads/master/gno-w-archiwach.user.js
 // ==/UserScript==
 
 (function() {
