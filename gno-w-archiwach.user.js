@@ -1,10 +1,11 @@
 // ==UserScript==
 // @name         G..noWArchiwach
 // @namespace    https://github.com/burtek/tampermonkey-scripts
-// @version      0.1
+// @version      0.1.1
 // @description  try to take over the world!
 // @author       burtek <burtekdotryw@gmail.com>
-// @match        https://www.genealogiawarchiwach.pl/
+// @match        https://www.genealogiawarchiwach.pl/*
+// @match        https://genealogiawarchiwach.pl/*
 // @grant        unsafeWindow
 // @grant        GM.setValue
 // @grant        GM.getValue
